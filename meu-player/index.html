@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Meu Player</title>
+<meta name="theme-color" content="#0c0c12">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="main" aria-live="polite"></main>
+
+<section id="player" aria-label="Player">
+  <input id="seek" type="range" min="0" max="1000" value="0" aria-label="Posição da faixa">
+  <div class="p-row">
+    <div class="p-info">
+      <img id="pArt" alt="" src="">
+      <div class="p-meta">
+        <b id="pTitle">Nada tocando</b>
+        <span id="pArtist">Escolha uma música</span>
+      </div>
+    </div>
+    <div class="p-ctrl">
+      <button id="bShuffle" class="ib sm" aria-label="Aleatório"></button>
+      <button id="bPrev" class="ib" aria-label="Anterior"></button>
+      <button id="bPlay" class="ib big" aria-label="Tocar/Pausar"></button>
+      <button id="bNext" class="ib" aria-label="Próxima"></button>
+      <button id="bRepeat" class="ib sm" aria-label="Repetir"></button>
+    </div>
+    <div class="p-time"><span id="tCur">0:00</span> / <span id="tDur">0:00</span></div>
+    <input id="vol" type="range" min="0" max="100" value="100" aria-label="Volume">
+  </div>
+</section>
+
+<nav id="nav">
+  <button data-v="home" class="on"></button>
+  <button data-v="search"></button>
+  <button data-v="favs"></button>
+  <button data-v="lists"></button>
+  <button data-v="settings"></button>
+</nav>
+
+<dialog id="dlg"></dialog>
+<div id="toast" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
